@@ -1,0 +1,30 @@
+-- insert data
+
+insert into table(col1,col2) values ('val1','val2');
+
+-- select data
+select * from table where col1 = 'val1' and col2='val2';
+
+-- update data
+update table set col1 = 'val1',col2='val2' where col3 = 'val1';
+
+-- delete data
+delete from table where col1 = 'val1';
+
+
+-- to order id
+set @num :=0;
+update registerdata set id = @num:=(@num + 1);
+ALTER table registerdata AUTO_INCREMENT = 1;
+
+
+mysql shutdown unexpectedly error solve process:
+
+-Rename folder mysql/data to mysql/data_old
+-Make a copy of mysql/backup folder and name it as mysql/data
+-Copy all your database folders from mysql/data_old into mysql/data (except mysql, performance_schema, and phpmyadmin folders)
+-Copy mysql/data_old/ibdata1 file into mysql/data folder
+-Start MySQL from XAMPP control panel
+
+
+
